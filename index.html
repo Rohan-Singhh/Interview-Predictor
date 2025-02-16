@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERVIEW PREDICTOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Interview Predictor Model</h1>
+        <h2>Decision Tree Learning Supervised Classification Based Model</h2>
+        <form id="prediction_form" onsubmit="judge(event)">
+            <div class="form-group">
+                <label for="company">Company:</label>
+                <select name="company" id="company">
+                    <option value="0">Microsoft</option>
+                    <option value="1">Apple</option>
+                    <option value="2">Amazon</option>
+                    <option value="3">Netflix</option>
+                    <option value="4">Google</option>
+                    <option value="5">Mastercard</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="communication">Communication skills:</label>
+                <select name="communication" id="communication">
+                    <option value="0">Low</option>
+                    <option value="1">Medium</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project">Projects:</label>
+                <select name="project" id="project">
+                    <option value="0">Good</option>
+                    <option value="1">Very Good</option>
+                    <option value="2">Advanced</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dsa">DSA:</label>
+                <select name="dsa" id="dsa">
+                    <option value="0">Beginner</option>
+                    <option value="1">Enough</option>
+                    <option value="2">Ultra</option>
+                </select>
+            </div>
+            <div id="balloon-container"></div>
+            <button type="submit" id="predict_btn">Predict</button>
+        </form>
+        <div id="output"></div>
+    </div>
+</body>
+</html>

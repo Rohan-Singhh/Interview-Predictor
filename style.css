@@ -1,0 +1,133 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+h1, h2 {
+    margin: 0.5em 0;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    appearance: none;
+    position: relative;
+    z-index: 2;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #22c1c3;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #1da8a6;
+}
+
+#output, #output.show, #output.show-success, #output.show-fail {
+    visibility: hidden;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: visibility 0s, opacity 0.5s linear;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#output.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#output.show-success {
+    background-color: green;
+}
+
+#output.show-fail {
+    background-color: red;
+}
+
+#balloon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    background-color: #ffcccc;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.9;
+    animation: floatUp 5s ease-in-out forwards;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    width: 2px;
+    height: 150px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -150px;
+        transform: scale(0.5);
+    }
+    100% {
+        bottom: 100vh;
+        transform: scale(1.2) rotate(15deg);
+    }
+}
